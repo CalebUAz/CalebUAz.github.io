@@ -317,24 +317,24 @@ $(document).ready(function(){
 	})
 
 	// Animates the lan button + functionality
-	$('#lan').click(function(e) {
-		if(!$(e.currentTarget).hasClass('es')){
-			$(e.currentTarget).addClass('es');
+	// $('#lan').click(function(e) {
+	// 	if(!$(e.currentTarget).hasClass('es')){
+	// 		$(e.currentTarget).addClass('es');
 
-			$('#lan img').attr("src","/assets/img/es_flag.webp");
+	// 		$('#lan img').attr("src","/assets/img/es_flag.webp");
 
-			localStorage.lan = "es"
-		}
-		else {
-			$(e.currentTarget).removeClass('es');
+	// 		localStorage.lan = "es"
+	// 	}
+	// 	else {
+	// 		$(e.currentTarget).removeClass('es');
 
-			$('#lan img').attr("src","/assets/img/en_flag.webp");
+	// 		$('#lan img').attr("src","/assets/img/en_flag.webp");
 
-			localStorage.lan = "en"
-		}
+	// 		localStorage.lan = "en"
+	// 	}
 
-		updateLanguage();
-	})
+	// 	updateLanguage();
+	// })
 
 });
 
