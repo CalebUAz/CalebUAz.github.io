@@ -32,10 +32,10 @@ Hi there 👋!
 #### How to reach me?
 
 <a href="https://www.linkedin.com/in/caleb-jones-shibu/">
-  <img align="left" alt="LinkedIn" width="22px" src="./readme_svg/linkedin.svg" />
+  <img align="left" alt="LinkedIn" width="22px" src="./assets/readme_svg/linkedin.svg" />
 </a>
 <a href="mailto:calebshibu@arizona.edu">
-  <img align="left" alt="Mail" width="22px" src="./readme_svg/gmail.svg" />
+  <img align="left" alt="Mail" width="22px" src="./assets/readme_svg/gmail.svg" />
 </a>
 
 <br/>
