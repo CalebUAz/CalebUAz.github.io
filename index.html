@@ -1,519 +1,1358 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caleb Jones Shibu — Neuroscience · Machine Learning · Systems</title>
 
-	<head>
+  <meta name="author" content="Caleb Jones Shibu" />
+  <meta name="description" content="Caleb Jones Shibu builds systems that turn noisy neural signals into meaning — brain–computer interfaces, explainable machine learning, and the embedded and cloud infrastructure that runs them. Founding Software Engineer at Page Technologies." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://calebuaz.github.io/" />
 
-		<!-- Meta tags -->
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Caleb Jones Shibu — Neuroscience · Machine Learning · Systems" />
+  <meta property="og:description" content="Decoding neural signals into models, neurofeedback, and systems that ship. Founding Software Engineer at Page Technologies." />
+  <meta property="og:url" content="https://calebuaz.github.io/" />
+  <meta property="og:image" content="https://calebuaz.github.io/assets/img/calebjshibu.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Caleb Jones Shibu" />
+  <meta name="twitter:description" content="Neuroscience · Machine Learning · Systems" />
+  <meta name="twitter:image" content="https://calebuaz.github.io/assets/img/calebjshibu.jpg" />
 
-		<meta name="description" content="Caleb Jones Shibu's website, biography, education, previous experience and published papers."/>
-		<meta name="keywords" content="nicolasmeseguer, NicolasMeseguer, Caleb Jones Shibu, Caleb Jones Shibu youtube, Caleb Jones Shibu github, Caleb Jones Shibu murcia, Caleb Jones Shibu cv, Caleb Jones Shibu portfolio"/>
-		
-		<meta name="author" content="Caleb Jones Shibu" />
-		<meta name="copyright" content="Work protected by copyright; no distribution without permission." />
-		
-		<!-- Title + Icon -->
-		<title>Caleb Jones Shibu</title>
-		<link rel="icon" type="image/x-icon" href="assets/img/NicolasMeseguer.ico">
+  <!-- Inline SVG favicon: a small signal trace -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c14'/%3E%3Cpath d='M3 17 C7 17 7 9 10 9 S13 23 16 23 19 7 22 7 25 17 29 17' fill='none' stroke='%23ff4d8d' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E" />
 
-		<!-- Improve SEO -->
-		<meta name="robots" content="index,follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400..500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
-		<!-- Styles -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-		<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
-		<link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    :root {
+      --bg: #0a0c14;
+      --bg-2: #0d101b;
+      --panel: rgba(255, 255, 255, 0.025);
+      --panel-2: rgba(255, 255, 255, 0.04);
+      --text: #edeef4;
+      --text-2: #b7bdce;
+      --text-3: #7b8198;
+      --line: rgba(255, 255, 255, 0.10);
+      --line-2: rgba(255, 255, 255, 0.06);
 
-	</head>
+      /* plasma colormap — the signature gradient */
+      --g1: #7c5cff;
+      --g2: #ff4d8d;
+      --g3: #ffb15c;
+      --grad: linear-gradient(90deg, var(--g1), var(--g2) 55%, var(--g3));
+      --accent: #b6a4ff;
+      --focus: #8b7bff;
 
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LS62H88490"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+      --serif: "Fraunces", Georgia, "Times New Roman", serif;
+      --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-		gtag('config', 'G-LS62H88490');
-	</script>
+      --container: 1080px;
+      --pad: clamp(1.25rem, 5vw, 4rem);
+    }
 
-	<body>
+    * { box-sizing: border-box; }
 
-		<!-- Bottom rounded button -->
-		<div class="options-button" id="options-toggler"><i class="fa-light fa-arrows-repeat"></i></div>
-		<div class="options-button" id="theme"><i class="fa-duotone fa-lightbulb"></i></div>
-		<!-- <div class="options-button" id="lan"><img class="lang-flag" src="/assets/img/en_flag.webp" alt="Flag indicating the english language is selected"></div> -->
+    html { scroll-behavior: smooth; }
 
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      /* faint plot-grid texture */
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.035) 1px, transparent 0);
+      background-size: 30px 30px;
+      overflow-x: hidden;
+    }
 
-		<!-- Navbar  -->
-		<nav id="top-nav" class="navbar navbar-expand-md navbar-light bg-light flex-md-nowrap flex-wrap">
-			<div class="container justify-content-center">
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="navbar-collapse collapse flex-grow-1 justify-content-center" id="collapsingNavbar3">
-					<ul class="navbar-nav mx-auto language" id="navbarList">
-						<li class="nav-item">
-							<a class="nav-link active" id="aboutme" href="#" 
-								data-en="About Me">
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="education" href="#" 
-								data-en="Education">
-						</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="publications" href="#" 
-								data-en="Publications">
-						</a>
+    ::selection { background: rgba(255, 77, 141, 0.28); color: #fff; }
 
-					</ul>
-				</div>
-			</div>
-		</nav>
+    a { color: inherit; text-decoration: none; }
 
-		<div class="container" id="main-content">
-			<div class="row content">
-				
-				<!-- Caleb Jones Shibu profile and contact info -->
-				<div id="leftPanel" class="col-md-3 language">
-					<div class="row mb-3">
-						<div class="col">
-							<img src="assets/img/calebjshibu.jpg" class="rounded me-auto d-block img-fluid profilepicture" alt="Caleb Jones Shibu profile picture">
-						</div>
-					</div>
+    .wrap {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding-left: var(--pad);
+      padding-right: var(--pad);
+    }
 
-					<h3 class="mb-2">Caleb Jones Shibu</h3>
+    .ext { vertical-align: 0; opacity: 0.7; }
 
-					<div class="d-none" id="contadorVisitas"></div>
+    /* ---------- gradient-underline link ---------- */
+    .ul { position: relative; color: var(--text); transition: color .25s ease; }
+    .ul::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -2px;
+      height: 1.5px;
+      background: var(--grad);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .38s cubic-bezier(.2,.7,.2,1);
+    }
+    .ul:hover, .ul:focus-visible { color: #fff; }
+    .ul:hover::after, .ul:focus-visible::after { transform: scaleX(1); }
 
-					<p class="mb-4">
-					<span class="t-secondary" 
-					data-en="Founding Software Engineer at "></span> <a href="http://pagetechnologies.io" class="link-dark" target="_blank">Page Technologies</a>.
-					</p>
-					
-					<div class="row mb-2">
-						<div class="col-1">
-							<i class="fal fa-map-marker-alt" aria-hidden="true"></i>
-						</div>
+    :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
 
-						<div class="col-10">
-							<!-- <span 
-								data-en="Allen Institute">
-							</span>  -->
-							<!-- <br/> -->
-							Boulder, 
-							<span 
-								data-en="Colorado">
-							</span>
-						</div>
-					</div>
+    /* ---------- nav ---------- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+      border-bottom: 1px solid transparent;
+    }
+    .nav.scrolled {
+      background: rgba(10, 12, 20, 0.72);
+      backdrop-filter: blur(14px) saturate(120%);
+      -webkit-backdrop-filter: blur(14px) saturate(120%);
+      border-bottom-color: var(--line-2);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-family: var(--mono);
+      font-size: .82rem;
+      letter-spacing: .02em;
+      color: var(--text-2);
+    }
+    .brand .dot {
+      width: 10px; height: 10px; border-radius: 2px;
+      background: var(--grad);
+      box-shadow: 0 0 14px rgba(255, 77, 141, 0.55);
+    }
+    .brand b { color: var(--text); font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 1.6rem; }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: .78rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      transition: color .2s ease;
+      position: relative;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-links a.active::before {
+      content: "";
+      position: absolute; left: -.7rem; top: 50%;
+      width: 5px; height: 5px; border-radius: 50%;
+      transform: translateY(-50%);
+      background: var(--g2);
+      box-shadow: 0 0 8px var(--g2);
+    }
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: .76rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: .5rem .85rem;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      color: var(--text);
+      display: inline-flex; align-items: center; gap: .4rem;
+      transition: border-color .25s ease, background .25s ease, box-shadow .25s ease;
+    }
+    .nav-cta:hover {
+      border-color: rgba(255, 77, 141, 0.5);
+      background: rgba(255, 77, 141, 0.08);
+      box-shadow: 0 0 24px rgba(124, 92, 255, 0.18);
+    }
 
-					<div class="row mb-2">
-						<div class="col-1">
-							<i class="ai ai-cv" aria-hidden="true"></i>
-						</div>
+    /* ---------- hero ---------- */
+    .hero {
+      position: relative;
+      padding-top: clamp(3.5rem, 11vh, 7rem);
+      padding-bottom: clamp(2.5rem, 7vh, 5rem);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -20% -10% auto -10%;
+      height: 70%;
+      background: radial-gradient(60% 60% at 50% 0%, rgba(124, 92, 255, 0.16), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero .wrap { position: relative; z-index: 1; }
 
-						<div class="col-10">
-							<a href="assets/documents/Caleb_Resume_2025.pdf" class="link-dark" target="_blank" data-en="Resume [Updated 12/2025]"></a>
-						</div>
-					</div>
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: clamp(.7rem, 1.6vw, .8rem);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      margin: 0 0 1.4rem;
+    }
+    .eyebrow .tick {
+      width: 26px; height: 2px; border-radius: 2px;
+      background: var(--grad);
+    }
+    h1.name {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2.7rem, 10.5vw, 7rem);
+      line-height: 0.96;
+      letter-spacing: -0.02em;
+      margin: 0;
+      font-optical-sizing: auto;
+    }
+    h1.name .last { font-style: italic; font-weight: 300; color: var(--text); }
+    .thesis {
+      max-width: 40ch;
+      margin: 1.8rem 0 0;
+      font-size: clamp(1.12rem, 2.4vw, 1.45rem);
+      line-height: 1.5;
+      color: var(--text-2);
+      font-weight: 400;
+    }
+    .thesis em { color: #fff; font-style: normal; }
 
-					<div class="row mb-2">
-						<div class="col-1">
-							<i class="fa-regular fa-envelope" aria-hidden="true"></i>
-						</div>
+    /* signal band */
+    .signal-band {
+      position: relative;
+      margin: clamp(2rem, 5vh, 3.2rem) 0 clamp(1.6rem, 4vh, 2.4rem);
+      height: clamp(150px, 24vh, 240px);
+      width: 100%;
+    }
+    .signal-band canvas { display: block; width: 100%; height: 100%; }
+    .signal-band .baseline {
+      position: absolute; left: 0; right: 0; top: 50%;
+      height: 1px; background: var(--line-2);
+    }
+    .signal-band .axis-l, .signal-band .axis-r {
+      position: absolute; bottom: 4px;
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .08em;
+      color: var(--text-3);
+      opacity: .85;
+    }
+    .signal-band .axis-l { left: 0; }
+    .signal-band .axis-r { right: 0; }
 
-						<div class="col-10">
-							<a href="mailto:calebshibu@gmail.com" class="link-dark">calebshibu@gmail.com</a>
-						</div>
-					</div>
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .9rem 1.4rem;
+    }
+    .now {
+      font-family: var(--mono);
+      font-size: .76rem;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      display: inline-flex; align-items: center; gap: .55rem;
+      margin-right: .4rem;
+    }
+    .now .pulse {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #5ee8a8;
+      box-shadow: 0 0 0 0 rgba(94, 232, 168, 0.6);
+      animation: pulse 2.4s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(94, 232, 168, 0.5); }
+      70% { box-shadow: 0 0 0 7px rgba(94, 232, 168, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(94, 232, 168, 0); }
+    }
+    .now b { color: var(--text-2); font-weight: 500; }
 
-					<div class="row mb-2">
-						<div class="col-1">
-							<i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-						</div>
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: var(--mono);
+      font-size: .8rem;
+      letter-spacing: .02em;
+      padding: .62rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      transition: border-color .25s ease, background .25s ease, box-shadow .25s ease, transform .2s ease;
+    }
+    .btn svg { opacity: .85; }
+    .btn:hover { transform: translateY(-1px); border-color: var(--line); background: var(--panel-2); }
+    .btn.primary {
+      border-color: rgba(255, 77, 141, 0.45);
+      background: linear-gradient(90deg, rgba(124, 92, 255, 0.14), rgba(255, 77, 141, 0.12));
+    }
+    .btn.primary:hover {
+      border-color: rgba(255, 77, 141, 0.75);
+      box-shadow: 0 8px 30px rgba(124, 92, 255, 0.22);
+    }
 
-						<div class="col-10">
-							<a href="https://www.linkedin.com/in/caleb-jones-shibu/" class="link-dark" target="_blank">LinkedIn</a>
-						</div>
-					</div>
+    /* ---------- generic section ---------- */
+    section { scroll-margin-top: 84px; }
+    .section { padding: clamp(3.5rem, 9vh, 6.5rem) 0; border-top: 1px solid var(--line-2); }
 
-					<div class="row mb-2">
-						<div class="col-1">
-							<i class="fab fa-github" aria-hidden="true"></i>
-						</div>
+    .sec-head { margin: 0 0 clamp(2rem, 4vh, 3rem); }
+    .sec-label {
+      font-family: var(--mono);
+      font-size: .76rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      display: inline-flex; align-items: center; gap: .65rem;
+      margin: 0 0 .9rem;
+    }
+    .sec-label .tick { width: 12px; height: 12px; border-radius: 3px; background: var(--grad); }
+    .sec-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.9rem, 4.6vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      margin: 0;
+    }
 
-						<div class="col-10">
-							<a href="https://github.com/calebshibu" class="link-dark" target="_blank">GitHub</a>
-						</div>
-					</div>
-				</div>
+    /* ---------- about ---------- */
+    .about-top {
+      display: grid;
+      grid-template-columns: clamp(180px, 26vw, 280px) 1fr;
+      gap: clamp(1.8rem, 4vw, 3.5rem);
+      align-items: start;
+    }
+    .portrait {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      border: 1px solid var(--line);
+      background: var(--bg-2);
+    }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.02) contrast(1.02); }
+    .portrait::after {
+      content: "";
+      position: absolute; inset: 0;
+      box-shadow: inset 0 -50px 60px -30px rgba(10, 12, 20, 0.85);
+      pointer-events: none;
+    }
+    .about-text p {
+      font-size: clamp(1.02rem, 1.9vw, 1.18rem);
+      line-height: 1.7;
+      color: var(--text-2);
+      margin: 0 0 1rem;
+      max-width: 60ch;
+    }
+    .about-text p strong { color: var(--text); font-weight: 500; }
 
-				<!-- About Me -->
-				<div class="col-md-8 offset-md-1 mb-5 active" id="aboutmeContent">
-					<div class="container">
-						<div class="row language">
-							<p class="mt-2 justify" 
-								data-en="Caleb was born in Kerala, India in 1996. He obtained a bachelor's degree in Computer Engineering from Goa University, India in 2018. He then worked in the field of Brain-Computer Interfaces, where he collected data from human participants and trained an AI model to predict brain states. His work led to the publication of multiple papers. Subsequently, he received a fully-funded admission offer for a Master's program at the University of Arizona. He earned a Master's degree in computer science while working as Graduate Research Assistant. Currently, he is eager to apply his expertise in PyTorch, TensorFlow, and computer vision to new challenges in ML/SWE roles. His experience in improving model performance, developing simulation pipelines, and implementing novel image processing methods positions him well to contribute to innovative projects in various ML field.">
-							</p>
-							
-							<h4 id="researchinterestsH4" class="mt-2" 
-								data-en="Research Interests">
-							</h4>
+    .focus-grid {
+      margin-top: clamp(2rem, 4vh, 3rem);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line-2);
+      border: 1px solid var(--line-2);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .focus {
+      background: var(--bg);
+      padding: 1.3rem 1.3rem 1.5rem;
+      transition: background .3s ease;
+    }
+    .focus:hover { background: var(--panel); }
+    .focus .k {
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex; align-items: center; gap: .5rem;
+      margin-bottom: .6rem;
+    }
+    .focus .k .b { width: 6px; height: 6px; border-radius: 50%; background: var(--g2); box-shadow: 0 0 8px var(--g2); }
+    .focus p { margin: 0; font-size: .95rem; color: var(--text-2); line-height: 1.55; }
 
-							<p class="mt-1"
-							<ul> 
-								<li>Research interests span neuroscience, computer science, and artificial intelligence, focusing on: 
-									<ul> 
-										<li>Brain-Computer Interfaces (BCI)</li> 
-										<li>Neurofeedback systems</li> 
-										<li>Machine learning and deep learning for signal classification and beyond</li> 
-									</ul> 
-								</li> 
-								<li>Expertise in: 
-									<ul> 
-										<li>Real-time data acquisition and signal interpretation</li> 
-										<li>Creating neurofeedback games and interactive systems</li> 
-										<li>Implementing various machine learning methodologies (supervised, unsupervised, reinforcement learning)</li> 
-										<li>Utilizing tools and frameworks such as Scikit-learn, TensorFlow, and PyTorch</li> 
-									</ul> 
-								</li> 
-								<li>Experience extends to: 
-									<ul> 
-										<li>Software engineering and development of complex systems</li> 
-										<li>ETL (Extract, Transform, Load) pipeline design and implementation</li> 
-										<li>Data management and analysis for large-scale projects</li> 
-										<li>Computer vision applications and model development</li> 
-										<li>General machine learning model development (predictive modeling, feature engineering, model tuning)</li>
-										<li>Additional expertise includes two-photon microscope image analysis for studying synapse flashes at dendrites.</li>
-									</ul>
-								</li>
-							</ul>
-							
-							<p>
-								Caleb has applied his skills to diverse fields beyond neuroscience, showcasing versatility in addressing various computational and analytical challenges. Caleb's interest in Explainable AI (xAI) demonstrates a commitment to enhancing the transparency and interpretability of complex AI/ML models.
-							</p>
-							
-							<p>
-								With a strong foundation in both theoretical concepts and practical implementation, Caleb is well-equipped to contribute to a wide range of roles in software engineering, machine learning, data science, and interdisciplinary research combining neuroscience with cutting-edge computational methods.
-							</p>
-							
+    /* ---------- agtech showcase ---------- */
+    .section-lead {
+      font-size: clamp(1.04rem, 2vw, 1.22rem);
+      line-height: 1.7;
+      color: var(--text-2);
+      max-width: 64ch;
+      margin: 0;
+    }
+    .section-lead strong { color: var(--text); font-weight: 500; }
+    .section-lead em { color: #fff; font-style: normal; }
 
-							</p>
+    /* electrode → dashboard pipeline */
+    .pipe { position: relative; margin: clamp(2.4rem, 5vh, 3.4rem) 0 clamp(2.4rem, 5vh, 3.4rem); }
+    .pipe-track {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: start;
+    }
+    .pipe-track::before {
+      content: "";
+      position: absolute;
+      left: 10%; right: 10%; top: 6px;
+      height: 2px;
+      background: var(--grad);
+      opacity: .55;
+    }
+    .stage {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: .55rem;
+      padding: 0 .3rem;
+    }
+    .stage .node {
+      width: 13px; height: 13px; border-radius: 50%;
+      background: var(--grad);
+      box-shadow: 0 0 0 5px var(--bg), 0 0 16px rgba(255, 77, 141, .55);
+      position: relative; z-index: 1;
+    }
+    .s-text { display: flex; flex-direction: column; gap: .12rem; align-items: center; }
+    .stage .s-label {
+      font-family: var(--mono);
+      font-size: .78rem;
+      letter-spacing: .03em;
+      color: var(--text);
+      margin-top: .15rem;
+    }
+    .stage .s-sub {
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .02em;
+      color: var(--text-3);
+      line-height: 1.4;
+    }
 
-							<h4 id="Experience" class="mt-2" data-en="Experience"></h4>
-							<ul class="mt-1">
-								<li class="abme-honors-bullet">
-									<strong>Page Technologies, Boulder, CO</strong>, Founding Software Engineer
-									- Sep 2025 - Present
-									<ul>
-										<li> AI Product Development: Design, implement, and deploy end-to-end AI solutions, integrating modern ML/DL models with scalable cloud-based APIs and user interfaces.</li>
-										<li> Firmware Development: Develop embedded firmware in C to implement MQTT-based AWS IoT API communication, enabling secure publish/subscribe messaging between on-device applications and cloud services.</li>
-									</ul>
-								</li>
-								<li class="abme-honors-bullet">
-									<strong>Computer Connection Wisconsin, Reedsburg, WI</strong>, Web developer (LLM Engineer)
-									- July 2025 - Sep 2025
-									<ul>
-										<li> Web Maintenance: Maintained and updated multiple CCWIS websites.</li>
-										<li> RAG Chatbot: Developed and deployed a CCWIS chatbot to provide customer tech support, with integrated human-agent escalation and a ticket-based support system.</li>
-									</ul>
-								</li>
-								<li class="abme-honors-bullet">
-									<strong>Side project</strong>, LLM Engineer
-									- March, 2025 - Present
-									<ul>
-										<li> Developed a custom dataset by scraping audio transcriptions from youtube channel.</li>                         
-										<li>Developed and deployed a Django-based Retrieval-Augmented Generation (RAG) system for answering sermon-related questions using Google Gemini and FAISS vector search. [<a href="https://github.com/CalebUAz/CFC-RAG" style="color: red;" target="_blank">Git</a>]</li>
-										<li>Integrated semantic search and YouTube timestamp linking to enhance user experience and information retrieval.</li>
-										<li>Deployed on Heroku and AWS [<a href="http://ai.rlcf.church" style="color: red;" target="_blank">sermon-rag</a>]</li>
-									</ul>
-								</li>
-							</ul>
-							<ul class="mt-1">
-								<li class="abme-honors-bullet">
-									<strong>Allen Institute, Seattle, WA</strong>, Software Engineer 2
-									- March, 2024 - March, 2025
-									<ul>                            
-										<li> Leveraged transfer learning to enhance AUC of ROC curves for real-time mask generation in the SLAP2 microscope, eliminating manual neuron annotation in voltage imaging data.  [<a href="https://github.com/calebshibu/SLAP2-Cellpose" style="color: red;" target="_blank">Git</a>].</li>          
-										<li> Developed and improved a iGluSnFR simulation pipeline to model dendrites imaged using a Bergamo microscope in mice expressing the iGluSnFR indicator, varying parameters such as motion amplitude, brightness, and synapse count.[<a href="https://github.com/AllenNeuralDynamics/iGluSnFR-simulation" style="color: red;" target="_blank">Git</a>].</li>
-										<li> Designed a state-of-the-art iGluSnFR motion correction pipeline for dendrite imaging, surpassing existing methods like Suite2p, Caiman, and Patchwarp in performance. This pipeline incorporates an ETL (Extract, Transform, Load) framework to handle large datasets efficiently, ensuring robust data extraction, precise transformation for motion correction, and seamless integration into downstream analysis workflows.[<a href="https://github.com/AllenNeuralDynamics/iGluSnFR-registration-pipeline" style="color: red;" target="_blank">Git</a>].</li>              
-										<li> Contributed to a super-resolution microscopy-based iGluSnFR source extraction pipeline to identify synapses within dendrites. [<a href="https://github.com/AllenNeuralDynamics/iGluSnFR-ROI" style="color: red;" target="_blank">Git</a>].</li>        
-										<li> Co-authored an upcoming paper detailing novel image processing methods for iGluSnFR indicator data analysis.</li>
-									</ul>
-								</li>
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(.9rem, 1.6vw, 1.2rem);
+    }
+    .pillar {
+      background: var(--panel);
+      border: 1px solid var(--line-2);
+      border-radius: 12px;
+      padding: 1.4rem 1.4rem 1.5rem;
+      transition: border-color .3s ease, background .3s ease, transform .25s ease;
+    }
+    .pillar:hover {
+      border-color: rgba(255, 77, 141, .3);
+      background: var(--panel-2);
+      transform: translateY(-2px);
+    }
+    .pillar .p-k {
+      font-family: var(--mono);
+      font-size: .78rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex; align-items: center; gap: .55rem;
+      margin: 0;
+    }
+    .pillar .p-k .b { width: 8px; height: 8px; border-radius: 2px; background: var(--grad); box-shadow: 0 0 10px rgba(255, 77, 141, .5); }
+    .pillar .p-role {
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .02em;
+      color: var(--text-3);
+      margin: .5rem 0 1rem;
+    }
+    .pillar .p-points { list-style: none; margin: 0 0 1.1rem; padding: 0; }
+    .pillar .p-points li {
+      position: relative;
+      padding-left: 1.15rem;
+      margin: 0 0 .5rem;
+      font-size: .93rem;
+      line-height: 1.55;
+      color: var(--text-2);
+    }
+    .pillar .p-points li::before {
+      content: "";
+      position: absolute; left: 0; top: .62em;
+      width: 6px; height: 1.5px; border-radius: 2px;
+      background: var(--text-3);
+    }
+    .pillar .p-points li strong { color: var(--text); font-weight: 600; }
 
-								<li class="abme-honors-bullet">
-									<strong>Biotronics, Ames, IA</strong>, Machine Learning Engineer
-									- Jan, 2024 - Feb, 2024
-									<ul>
-										<li> Worked on cleaning up the image preprocessing codebase. </li>
-										<li> Focused on explainablility of ResNet model which predicted Intra-Muscular Fat (IMF) values from ultrasoud images from livestocks. </li>
-									</ul>
-								</li>
+    /* ---------- entries (experience + pubs share rhythm) ---------- */
+    .entry, .pub {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: clamp(1rem, 3vw, 2.4rem);
+      padding: 1.9rem 0;
+      border-top: 1px solid var(--line-2);
+    }
+    .entry:first-of-type, .pub:first-of-type { border-top: 0; padding-top: 0; }
 
-								<li class="abme-honors-bullet">
-									<strong>University of Arizona, Tucson, AZ</strong>, Graduate Research Assistant
-									- Aug, 2021 - Dec, 2023
-									<ul>
-										<li>Developed a network-based finger tapping and imaging rating application using PyGame [<a href="https://github.com/ml4ai/tomcat/tree/master/human_experiments/lab_software/tomcat-baseline-tasks" style="color: red;" target="_blank">Git</a>].</li>
-										<li>Acquired fNIRS, EEG and Gaze data from multiple subjects.</li>
-										<li>Developed a real-time physio visualization tool using PyQT5 [<a href="https://github.com/ml4ai/tomcat/tree/master/human_experiments/lab_software/tomcat-physio-viz" style="color: red;" target="_blank">Git</a>].</li>
-										<li>Developed a script for data conversion and labeling, improving the quality and usability of data [<a href="https://github.com/ml4ai/tomcat/tree/master/human_experiments/lab_software/tomcat-physio-data-extraction" style="color: red;" target="_blank">Git</a>] [<a href="https://github.com/ml4ai/tomcat/tree/master/human_experiments/lab_software/tomcat-physio-data-extraction_v2" style="color: red;" target="_blank">Git</a>] [<a href="https://github.com/ml4ai/tomcat/tree/master/human_experiments/lab_software/data_extraction/tomcat-physio-data-extraction" style="color: red;" target="_blank">Git</a>].</li>
-										<li> Conducted classification experiments using LSTM to classify valence and arousal from fNIRS and EEG signals, and authored a paper that was accepted for the 2023 NeurIPS conference [<a href="https://nips.cc/virtual/2023/poster/73548" style="color: red;" target="_blank">nips.cc</a>].</li>
-									</ul>
-								</li>
+    .entry-meta { display: flex; flex-direction: column; gap: .3rem; padding-top: .35rem; }
+    .when {
+      font-family: var(--mono);
+      font-size: .82rem;
+      letter-spacing: .01em;
+      color: var(--text);
+    }
+    .where {
+      font-family: var(--mono);
+      font-size: .74rem;
+      letter-spacing: .02em;
+      color: var(--text-3);
+    }
 
-								<li class="abme-honors-bullet mt-2">
-									<strong>Sree Chitra Tirunal Institute for Medical Sciences & Technology, Kerala, India</strong>, Project Scientist
-									- Jan, 2021 - Jul, 2021
-									<ul>
-										<li>Developed a neurofeedback game application using PyGame that performs real-time filtering of fNIRS signals. This application incorporates a deep learning model for real-time prediction of brain states. The predictions generated by the model are dynamically integrated into the PyGame interface, thereby facilitating an advanced interaction between the model output and user input.</li>
-										<li>Developed an explainable AI (xAI) model for fNIRS signal classification using DeepSHAP, which interprets model predictions in terms of channel names. For instance, if the model predicts activation of the left motor cortex, the xAI module will illustrate which channels have positively and negatively contributed to that prediction.</li>
-									</ul>
-								</li>
+    .org {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+      line-height: 1.15;
+      margin: 0 0 .15rem;
+      letter-spacing: -0.01em;
+      display: flex; align-items: baseline; gap: .55rem; flex-wrap: wrap;
+    }
+    .org::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 8px; height: 8px; border-radius: 2px;
+      background: var(--grad);
+      transform: translateY(-2px);
+      opacity: .9;
+    }
+    .role {
+      font-family: var(--sans);
+      font-size: .98rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0;
+    }
+    .points { list-style: none; margin: .85rem 0 0; padding: 0; }
+    .points li {
+      position: relative;
+      padding-left: 1.3rem;
+      margin: 0 0 .6rem;
+      color: var(--text-2);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .points li::before {
+      content: "";
+      position: absolute; left: 0; top: .72em;
+      width: 7px; height: 1.5px; border-radius: 2px;
+      background: var(--text-3);
+    }
+    .points li strong { color: var(--text); font-weight: 600; }
 
-								<li class="abme-honors-bullet mt-2">
-									<strong>St. Jude Children’s Research Hospital, Memphis, TN</strong>, Research Intern 
-									- Sep, 2020 - Jan, 2021
-									<ul>
-										<li>Developed a deep learning-based classification system aimed at differentiating between active and passive brain states. These states are associated with single-trial lower limb motor preparations in stroke patients. Even though the motor cortex controls the knee and hip regions closely, the model was successful in classifying the brain activations caused by knee and hip movements in both active and passive states.</li>
-									</ul>
-								</li>
+    .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+    .tag {
+      font-family: var(--mono);
+      font-size: .73rem;
+      letter-spacing: .02em;
+      padding: .3rem .6rem;
+      border: 1px solid var(--line-2);
+      border-radius: 6px;
+      color: var(--text-3);
+      display: inline-flex; align-items: center; gap: .35rem;
+      transition: color .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .tag:hover { color: var(--text); border-color: rgba(255,77,141,.4); background: rgba(255,77,141,.06); }
 
-								<li class="abme-honors-bullet mt-2">
-									<strong>Sree Chitra Tirunal Institute for Medical Sciences & Technology, Kerala, India</strong>, Research Intern
-									- Jun, 2019 - Sep, 2020
-									<ul>
-										<li>Developed handcrafted features for fNIRS signals using PCA and ICA. These features were then utilized to improve the classification accuracy of machine learning classifiers, such as SVM and KNN, in the classification of fNIRS signals as left-, right- brain activation or rest.</li>
-										<li>Created a sliding window-based CNN and LSTM Deep Learning model for fNIRS signals, increasing the classification accuracy from 55% to 97%.</li>
-									</ul>
-								</li>
+    /* ---------- publications ---------- */
+    .pub-year .yr {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 300;
+      color: var(--text-3);
+      font-feature-settings: "tnum";
+      padding-top: .1rem;
+    }
+    .pub-title {
+      font-size: clamp(1.08rem, 2vw, 1.22rem);
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 .45rem;
+      line-height: 1.35;
+    }
+    .pub-authors { font-size: .95rem; color: var(--text-2); margin: 0 0 .3rem; line-height: 1.5; }
+    .pub-authors .me { color: #fff; font-weight: 600; }
+    .pub-venue {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: .98rem;
+      color: var(--text-3);
+      margin: 0 0 .9rem;
+    }
+    .pub-actions { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+    details.cite { display: inline-block; }
+    details.cite > summary {
+      list-style: none;
+      cursor: pointer;
+      font-family: var(--mono);
+      font-size: .73rem;
+      letter-spacing: .02em;
+      padding: .3rem .6rem;
+      border: 1px solid var(--line-2);
+      border-radius: 6px;
+      color: var(--text-3);
+      transition: color .2s ease, border-color .2s ease;
+      user-select: none;
+    }
+    details.cite > summary::-webkit-details-marker { display: none; }
+    details.cite[open] > summary,
+    details.cite > summary:hover { color: var(--text); border-color: var(--line); }
+    .cite-body {
+      margin-top: .7rem;
+      border: 1px solid var(--line-2);
+      border-radius: 8px;
+      background: var(--bg-2);
+      overflow: hidden;
+    }
+    .cite-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .45rem .7rem;
+      border-bottom: 1px solid var(--line-2);
+    }
+    .cite-bar span { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); }
+    .copy-btn {
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .04em;
+      background: none;
+      border: 1px solid var(--line-2);
+      border-radius: 5px;
+      color: var(--text-2);
+      padding: .25rem .55rem;
+      cursor: pointer;
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .copy-btn:hover { color: #fff; border-color: rgba(255,77,141,.4); }
+    .copy-btn.done { color: #5ee8a8; border-color: rgba(94,232,168,.4); }
+    .cite-body pre {
+      margin: 0;
+      padding: .85rem .9rem;
+      font-family: var(--mono);
+      font-size: .76rem;
+      line-height: 1.5;
+      color: var(--text-2);
+      overflow-x: auto;
+      white-space: pre;
+    }
 
-							</ul>
-							
-						</div>
-					</div>
-				</div>
+    /* ---------- contact ---------- */
+    .contact-inner { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    .contact-lead {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      max-width: 22ch;
+      margin: 0;
+    }
+    .contact-lead .grad {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-style: italic;
+    }
+    .contact-links { display: flex; flex-wrap: wrap; gap: .8rem; }
 
+    /* ---------- footer ---------- */
+    footer { border-top: 1px solid var(--line-2); padding: 2.4rem 0 3rem; }
+    .foot-inner {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      align-items: center; justify-content: space-between;
+      font-family: var(--mono);
+      font-size: .74rem;
+      letter-spacing: .03em;
+      color: var(--text-3);
+    }
+    .foot-inner .sig { display: inline-flex; align-items: center; gap: .5rem; }
+    .foot-inner .sig .dot { width: 8px; height: 8px; border-radius: 2px; background: var(--grad); }
 
-				<!-- Education -->
-				<div class="col-md-8 offset-md-1 mb-5" id="educationContent">
-					<div class="container">
-						<div class="row mt-2 language">
-							<h2 data-en="M.S. in Computer Science"></h2>
-							<div class="trnsf-thin" data-en="(University of Arizona, 2021-2023)"></div>
-				
-							<p class="mt-1 justify" data-en="Courses:"></p>
-							<ul style="text-align: justify;">
-								<li data-en="Advanced Topics in Artificial Intelligence"></li>
-								<li data-en="Principles of Machine Learning"></li>
-								<li data-en="Design and Analysis of Algorithms"></li>
-								<li data-en="Computer Vision"></li>
-								<li data-en="Computer Security"></li>
-								<li data-en="Software Engineering"></li>
-								<li data-en="Advance Data Visualization"></li>
-							</ul>
+    /* ---------- reveal ---------- */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
 
-							<p class="mt-1 justify" data-en="Academic Projects:"></p>
-							<ul style="text-align: justify;">
-								<li data-en='<strong>RL-Bowling:</strong> Designed and implemented a Proximal Policy Optimization (PPO) agent with MLP architecture using OpenAI Gym, achieving effective pin knockdown in a custom bowling environment through continuous action space optimization and reward-driven learning (Feb ’25) [<a href="https://github.com/CalebUAz/RL-Games" style="color: red;" target="_blank">Git</a>]'></li>
+    /* ---------- responsive ---------- */
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .about-top { grid-template-columns: 1fr; }
+      .portrait { max-width: 230px; }
+      .focus-grid { grid-template-columns: 1fr; }
+      .pillars { grid-template-columns: 1fr; }
+      .pipe-track { grid-template-columns: 1fr; gap: 1.15rem; }
+      .pipe-track::before { left: 6px; right: auto; top: 6px; bottom: 6px; width: 2px; height: auto; }
+      .stage { flex-direction: row; align-items: flex-start; text-align: left; gap: .85rem; padding: 0; }
+      .stage .node { margin-top: 3px; }
+      .s-text { align-items: flex-start; }
+      .stage .s-label { margin-top: 0; }
+      .entry, .pub { grid-template-columns: 1fr; gap: .35rem; }
+      .entry-meta { flex-direction: row; gap: .9rem; padding-top: 0; margin-bottom: .35rem; }
+      .pub-year .yr { font-size: 1.1rem; padding-top: 0; margin-bottom: .2rem; }
+    }
 
-								<li data-en='<strong>Resume-GPT:</strong> A Streamlit-based chatbot application that utilizes GPT-3.5-turbo, enabling users to interact and ask questions
-									about a person’s background based on their resume. (Oct ’23) [<a href="https://github.com/CalebUAz/resume-chat-bot" style="color: red;" target="_blank">Git</a>]'></li>
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
 
-								<li data-en='<strong>Grocify App:</strong> A web application, developed using Django and React and deployed on the Google Cloud Platform, enhances the grocery list-making experience and is accessible on both PC and mobile devices. (May ’23) [<a href="https://github.com/CSC536-Grocify/grocify" style="color: red;" target="_blank">Git</a>]'></li>
-							
-								<li data-en='<strong>ToMCAT-offline-Viz:</strong> A GUI was developed using PyQt5 as an all-in-one tool to visualize the TOMCAT dataset. The offline viz tool is part of a collaborative project aimed at creating an all-in-one multimodal (fNIRS, Eye tracker, EEG) visualization tool. To achieve this goal, the project accepts experimental data in the form of CSV files and screenshots (PNG) and presents it to users in an easily understandable and analyzable manner. This tool incorporates various data types, including functional near-infrared spectroscopy (fNIRS), eye tracking, and electroencephalography (EEG), to offer a comprehensive view of cognitive and perceptual processes such as attention, working memory, and emotion. Researchers can utilize this tool to gain valuable insights into how team members interact with each other through diverse tasks and environments. (May ’23) [<a href="https://github.com/CalebUAz/tomcat-offline-viz" style="color: red;" target="_blank">Git</a>]'></li>
-							
-								<li data-en='<strong>Data poisoning in Machine Learning:</strong> Explored an approach to poison a Machine Learning Model by attaching a Trojan Net which makes the model misclassify with high accuracy (Dec ’22) [<a href="https://github.com/CalebUAz/TrojanNet" style="color: red;" target="_blank">Git</a>]'></li>
-							
-								<li data-en='<strong>Multi-Modal emotion recognition:</strong> Currently working on a diffusion-based deep neural network that classifies emotions from a multimodal dataset. (Aug ’22 - Dec ’23) [<a href="https://github.com/CalebUAz/deep-learning-emotion-recognition" style="color: red;" target="_blank">Git</a>]''></li>
-							
-								<li data-en='<strong>fNIRS data augmentation with GANs:</strong> Using Python implemented a GAN model which generated synthetic fNIRS data to solve issues related to fNIRS data acquisition and model training. (Nov ’21)'></li>
-							
-								<li data-en='<strong>Explainable medical image classification:</strong> Developed a model which was able to classify Covid19 chest X-ray with an accuracy of 90% and ISIC Skin cancer dataset with an accuracy of 70%. The model classification was explained using LIME, GradCam HeatMap, and Saliency Maps. (Nov ’21) [<a href="https://github.com/CalebUAz/CSC580" style="color: red;" target="_blank">Git</a>]'></li>
-							</ul>
-							
-							
-							<h2 class="mt-4" data-en="B.S in Computer Science"></h2>
-							<div class="trnsf-thin" data-en="(Padre Conceicao College of Engineering, Goa, India, 2014-2018)"></div>
-						</div>
-					</div>
-				</div>
-				
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand"><span class="dot" aria-hidden="true"></span><b>Caleb Jones Shibu</b></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#agtech">AgTech</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="https://calebuaz.github.io/assets/documents/Caleb_Resume_2025.pdf" target="_blank" rel="noopener">
+        Résumé
+        <svg class="ext" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </header>
 
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <p class="eyebrow"><span class="tick" aria-hidden="true"></span>Brain–Computer Interfaces · Machine Learning · AgTech · Full-Stack Software</p>
+        <h1 class="name">Caleb Jones <span class="last">Shibu</span></h1>
+        <p class="thesis">I build systems that turn noisy signals into meaning — from <em>brain–computer interfaces</em> to <em>in-field nutrient sensors</em>, and the ML, firmware, and cloud that run them.</p>
 
-				<!-- Publications -->
-				<div class="col-md-8 offset-md-1 mb-5" id="publicationsContent">
-					<div class="container">
-						<div class="row mt-2">
-							<h2 class="pub-year-h2">2023</h2>
-				
-							<div class="pub-block">
-								<div class="lucida-console h5">The ToMCAT Dataset</div>
-								<div class="pub-authors mt-1">
-									<span class="pub-author">Adarsh Pyarelal, Eric Duong, <strong>Caleb Jones Shibu</strong>, Paulo Soares, Savannah Boyd, Payal Khosla, Valeria Pfeifer, Diheng Zhang, Eric S Andrews, Rick Champlin, Vincent Paul Raymond, Meghavarshini Krishnaswamy, Clayton Morrison, Emily Butler, Kobus Barnard</span>
-								</div>
-								<div class="pub-congress">Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track, 2023</div>
-								<div class="mt-1">
-									<i class="far fa-file-pdf"></i> 
-									<a href="https://openreview.net/forum?id=ZJWQfgXQb6" target="_blank" class="link-dark">PDF</a> 
-									<span class="pub-force-margin-left"> 
-										<i class="fas fa-quote-left"></i> 
-										<a href="#" id="citation" class="link-dark">BibTeX</a>
-									</span>
-								</div>
-								
-								<div class="d-none">
-									@inproceedings{pyarelal2023the,
-										title={The ToMCAT Dataset},
-										author={Adarsh Pyarelal and Eric Duong and \textbf{Shibu, Caleb Jones} and Paulo Soares and Savannah Boyd and Payal Khosla and Valeria Pfeifer and Diheng Zhang and Eric S Andrews and Rick Champlin and Vincent Paul Raymond and Meghavarshini Krishnaswamy and Clayton Morrison and Emily Butler and Kobus Barnard},
-										booktitle={Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-										year={2023},
-										url={https://openreview.net/forum?id=ZJWQfgXQb6}
-									}
-								</div>
-							</div>
-							<p></p>
-							<div class="pub-block">
-								<div class="lucida-console h5">Decoding Emotional Responses: A Comparative Study of fNIRS and EEG Neuroimaging Techniques</div>
-								<div class="pub-authors mt-1">
-									<span class="pub-author"><strong>Caleb Jones Shibu</strong></span>
-								</div>
-								<div class="pub-congress">The University of Arizona, 2023</div>
-								<div class="mt-1">
-									<i class="far fa-file-pdf"></i> 
-									<a href="https://repository.arizona.edu/bitstream/handle/10150/670846/azu_etd_21073_sip1_m.pdf?sequence=1&isAllowed=y" target="_blank" class="link-dark">PDF</a> 
-									<span class="pub-force-margin-left"> 
-										<i class="fas fa-quote-left"></i> 
-										<a href="#" id="citation" class="link-dark">BibTeX</a>
-									</span>
-								</div>
-								<div class="d-none">
-									@inproceedings{caleb2023decoding,
-										title={Decoding Emotional Responses: A Comparative Study of fNIRS and EEG Neuroimaging Techniques},
-										author={ \textbf{Shibu, Caleb Jones}},
-										booktitle={The University of Arizona},
-										year={2023},
-										url={https://repository.arizona.edu/bitstream/handle/10150/670846/azu_etd_21073_sip1_m.pdf?sequence=1&isAllowed=y}
-									}
-								</div>
-							</div>
-						</div>
+        <div class="signal-band" aria-hidden="true">
+          <div class="baseline"></div>
+          <canvas id="signal"></canvas>
+          <span class="axis-l">fNIRS · EEG · imaging</span>
+          <span class="axis-r">decode →</span>
+        </div>
 
-						<div class="row mt-2">
-							<h2 class="pub-year-h2">2022</h2>
-				
-							<div class="pub-block">
-								<div class="lucida-console h5">Explainable artificial intelligence model to predict brain states from fNIRS signals</div>
-								<div class="pub-authors mt-1"><span class="pub-author"><strong>Caleb Jones Shibu</strong></span>, Sujesh Sreedharan, Arun KM, Chandrasekharan Kesavadas, Ranganatha Sitaram</div>
-								<div class="pub-congress">Frontiers in Human Neuroscience Brain-Computer Interfaces (2022).</div>
-								<div class="mt-1"><i class="far fa-file-pdf"></i> <a href="https://www.frontiersin.org/articles/10.3389/fnhum.2022.1029784/full" target="_blank" class="link-dark ">PDF</a> <span class="pub-force-margin-left"> <i class="fas fa-quote-left"></i> <a href="#" id="citation" class="link-dark">BibTeX</a></span></div>
-								<div class="d-none">
-									@article{CalebJS2022,
-										title={Explainable artificial intelligence model to predict brain states from fNIRS signals},
-										author={\textbf{Shibu, Caleb Jones} ;Sujesh Sreedharan; Arun KM ;Chandrasekharan Kesavadas ;Ranganatha Sitaram},
-										journal={Frontiers in Human Neuroscience Brain-Computer Interfaces},
-										year={2023}, 
-										doi={10.3389/fnhum.2022.1029784}}
-								</div>
-							</div>
-						</div>
-				
-						<div class="row mt-3">
-							<h2 class="pub-year-h2">2020</h2>
-				
-							<div class="pub-block">
-								<div class="lucida-console h5">Comparison of classification performance of handpicked, handcrafted, and automated-features for fNIRS-BCI system</div>
-								<div class="pub-authors mt-1"><span class="pub-author"><strong>Caleb Jones Shibu</strong></span>, Sujesh Sreedharan, Arun KM, Chandrasekharan Kesavadas</div>
-								<div class="pub-congress">2020 5th International Conference on Intelligent Informatics and Biomedical Sciences (ICIIBMS). IEEE, 2020, pp. 152–157</div>
-								<div class="mt-1"><i class="far fa-file-pdf"></i> <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9336392" target="_blank" class="link-dark">PDF</a> <span class="pub-force-margin-left"> <i class="fas fa-quote-left"></i> <a href="#" id="citation" class="link-dark">BibTeX</a></span></div>
-								<div class="d-none">
-									@INPROCEEDINGS{9336392,
-										author={\textbf{Shibu, Caleb Jones} and Sreedharan, Sujesh and KM, Arun and Kesavadas, Chandrasekharan},
-										booktitle={2020 5th International Conference on Intelligent Informatics and Biomedical Sciences (ICIIBMS)}, 
-										title={Comparison of classification performance of handpicked, handcrafted, and automated-features for fNIRS-BCI system}, 
-										year={2020},
-										volume={},
-										number={},
-										pages={152-157},
-										publisher = {IEEE},
-										doi={10.1109/ICIIBMS50712.2020.9336392}}
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
+        <div class="hero-actions">
+          <span class="now"><span class="pulse" aria-hidden="true"></span>Now — <b>Founding Software Engineer, Page Technologies · Boulder, CO</b></span>
+        </div>
 
+        <div class="hero-actions" style="margin-top:1.4rem">
+          <a class="btn primary" href="https://calebuaz.github.io/assets/documents/Caleb_Resume_2025.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+            Download résumé
+          </a>
+          <a class="btn" href="mailto:calebshibu@gmail.com">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            Email
+          </a>
+          <a class="btn" href="https://github.com/calebshibu" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            GitHub
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/caleb-jones-shibu/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M13.63 0H2.37A2.37 2.37 0 0 0 0 2.37v11.26A2.37 2.37 0 0 0 2.37 16h11.26A2.37 2.37 0 0 0 16 13.63V2.37A2.37 2.37 0 0 0 13.63 0ZM4.94 13.06H2.86V6.4h2.08v6.66ZM3.9 5.49a1.2 1.2 0 1 1 0-2.41 1.2 1.2 0 0 1 0 2.41Zm9.16 7.57h-2.08V9.82c0-.78-.01-1.78-1.08-1.78-1.09 0-1.26.85-1.26 1.72v3.3H6.56V6.4h2v.91h.03c.28-.53.96-1.08 1.97-1.08 2.11 0 2.5 1.39 2.5 3.19v3.64Z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
 
-				<!-- Clases particulares -->
-				<div class="col-md-12 mb-5" id="particularContent">
-					<div class="container language">
-						<h1 class="particular-h1 mb-3" data-en="Quality always goes first."></h1>
-						
-						<h4 class="particular-clickable">🧑 <span class="particular-h4"><span data-en="Who's "></span><span class="particular-name">Nicolás Meseguer</span>?</span></h4>
-						<div class="container">
-							<div class="row mb-4 align-middle align-items-center">
-								<div class="col-sm-0 col-md-4 col-lg-3">
-									<div>
-										<img src="assets/img/NicolasMeseguer.webp" alt="Nicolás Meseguer" class="profilepicture-particular w-75 d-block">
-									</div>
-								</div>
-								
-							</div>
-						</div>
+    <!-- ============ ABOUT ============ -->
+    <section class="section reveal" id="about">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="sec-label"><span class="tick" aria-hidden="true"></span>About</p>
+          <h2 class="sec-title">Signal, model, system.</h2>
+        </div>
 
-						<h4 class="particular-clickable">💼 <span class="particular-h4" data-en="Previous experience"></span></h4>
-						<div>
+        <div class="about-top">
+          <div class="portrait">
+            <img src="https://calebuaz.github.io/assets/img/calebjshibu.jpg" alt="Portrait of Caleb Jones Shibu" loading="lazy" />
+          </div>
+          <div class="about-text">
+            <p>Caleb works at the seam of <strong>neuroscience, machine learning, and software engineering</strong>. For most of a decade he's been decoding brain activity — fNIRS, EEG, and voltage imaging — and building the real-time systems, pipelines, and models that turn those signals into something usable.</p>
+            <p>His research runs from brain–computer interfaces and neurofeedback to explainable AI; his engineering runs from embedded firmware to ETL at scale to AI products in production. He's as interested in <strong>why</strong> a model makes a prediction as <strong>whether</strong> it's right. Today that means building Page Technologies' field nutrient sensors — the same decode-the-signal problem, now in soil and water instead of cortex.</p>
+          </div>
+        </div>
 
-						</div>
+        <div class="focus-grid">
+          <div class="focus">
+            <p class="k"><span class="b" aria-hidden="true"></span>Brain–Computer Interfaces</p>
+            <p>Real-time acquisition and decoding of fNIRS and EEG into discrete brain states.</p>
+          </div>
+          <div class="focus">
+            <p class="k"><span class="b" aria-hidden="true"></span>Neurofeedback</p>
+            <p>Closed-loop games and interfaces driven by live signal classification.</p>
+          </div>
+          <div class="focus">
+            <p class="k"><span class="b" aria-hidden="true"></span>Machine &amp; Deep Learning</p>
+            <p>Supervised, unsupervised, and reinforcement learning across signal, image, and text.</p>
+          </div>
+          <div class="focus">
+            <p class="k"><span class="b" aria-hidden="true"></span>Explainable AI</p>
+            <p>Interpreting predictions down to the contributing channel with DeepSHAP.</p>
+          </div>
+          <div class="focus">
+            <p class="k"><span class="b" aria-hidden="true"></span>Signal &amp; Image Pipelines</p>
+            <p>Motion correction, source extraction, and ETL for large microscopy and physiology datasets.</p>
+          </div>
+          <div class="focus">
+            <p class="k"><span class="b" aria-hidden="true"></span>Production Systems</p>
+            <p>Embedded firmware in C with MQTT / AWS IoT, plus cloud APIs and interfaces.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-						<h4 class="particular-clickable">🎓 <span class="particular-h4" data-en="Specializations and courses"></span></h4>
-						<div>
-					
-						</div>
+    <!-- ============ AGTECH ============ -->
+    <section class="section reveal" id="agtech">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="sec-label"><span class="tick" aria-hidden="true"></span>AgTech · Page Technologies</p>
+          <h2 class="sec-title">From electrode to dashboard.</h2>
+        </div>
 
-						<h4 class="particular-clickable">📚 <span class="particular-h4" data-en="Educational materials"></span></h4>
-						<div>
-							
-						</div>
+        <p class="section-lead">At <strong>Page Technologies</strong>, Caleb builds the Autosampler — a field instrument that automatically samples, measures, and uploads nutrient levels (nitrate, potassium, calcium, ammonium) from greenhouses, soil, and water systems. It's the same problem as the rest of his work in a new medium: <em>take a noisy analog signal and turn it into something you can act on</em>. He owns it end to end — the firmware on the device, the models that read the chemistry, and the platform growers log into.</p>
 
-						<h4 class="particular-clickable">💰 <span class="particular-h4"  data-en="Price per hour"></span></h4>
-						<div>
-							
-						</div>
+        <!-- the pipeline: raw electrode signal → ppm → cloud -->
+        <div class="pipe" aria-hidden="true">
+          <div class="pipe-track">
+            <div class="stage"><span class="node"></span><div class="s-text"><span class="s-label">Electrode</span><span class="s-sub">raw mV</span></div></div>
+            <div class="stage"><span class="node"></span><div class="s-text"><span class="s-label">Calibrate</span><span class="s-sub">Nernst + ML</span></div></div>
+            <div class="stage"><span class="node"></span><div class="s-text"><span class="s-label">Concentration</span><span class="s-sub">PPM, on-device</span></div></div>
+            <div class="stage"><span class="node"></span><div class="s-text"><span class="s-label">Uplink</span><span class="s-sub">MQTT · TLS</span></div></div>
+            <div class="stage"><span class="node"></span><div class="s-text"><span class="s-label">Dashboard</span><span class="s-sub">live + alerts</span></div></div>
+          </div>
+        </div>
 
-						<h4 class="particular-clickable">❓ <span class="particular-h4"  data-en="FAQ"></span></h4>
-						<div>
-						
-						</div>
+        <div class="pillars">
+          <article class="pillar">
+            <p class="p-k"><span class="b" aria-hidden="true"></span>Firmware</p>
+            <p class="p-role">Embedded · C / ESP32</p>
+            <ul class="p-points">
+              <li>Autonomous sampling firmware on <strong>ESP32</strong> (ESP-IDF, FreeRTOS) running unattended in the field.</li>
+              <li>Drives the fluidics — pumps and valves over an I²C GPIO expander — plus BLE WiFi provisioning for setup.</li>
+              <li>Secure <strong>MQTT-over-TLS</strong> telemetry to AWS IoT, with on-device logging and quality gates so only trustworthy readings are reported.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">ESP32</span><span class="tag">ESP-IDF</span><span class="tag">C</span><span class="tag">FreeRTOS</span><span class="tag">MQTT / TLS</span><span class="tag">BLE</span>
+            </div>
+          </article>
 
-						<h4 class="particular-clickable">📞 <span class="particular-h4" data-en="Contact"></span></h4>
-						<div>
-							
-						</div>
+          <article class="pillar">
+            <p class="p-k"><span class="b" aria-hidden="true"></span>Machine Learning</p>
+            <p class="p-role">Sensor calibration · signal</p>
+            <ul class="p-points">
+              <li>Converts raw ion-selective-electrode voltages into nutrient <strong>parts-per-million</strong>, right on the device.</li>
+              <li>Pairs physics-based <strong>Nernst/Nikolsky</strong> calibration with gradient-boosted models (LightGBM) to push accuracy further.</li>
+              <li>Extends calibration life so biosensor cards are insert-and-run — handling drift and outliers across messy field conditions.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Nernst / Nikolsky</span><span class="tag">LightGBM</span><span class="tag">scikit-learn</span><span class="tag">drift correction</span>
+            </div>
+          </article>
 
-					</div>
-				</div>
-			</div>
-		</div>
+          <article class="pillar">
+            <p class="p-k"><span class="b" aria-hidden="true"></span>Full-Stack</p>
+            <p class="p-role">Cloud + web</p>
+            <ul class="p-points">
+              <li>Serverless <strong>AWS</strong> backend (SST) ingesting device telemetry through IoT Core and Device Shadows.</li>
+              <li>Data and export APIs feeding a live <strong>Vue + TypeScript</strong> dashboard with trends, thresholds, and alerts.</li>
+              <li>SCADA integration to stream readings into existing control stacks, over multi-account, multi-stage infrastructure.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">AWS</span><span class="tag">SST</span><span class="tag">IoT Core</span><span class="tag">DynamoDB</span><span class="tag">Vue</span><span class="tag">TypeScript</span>
+            </div>
+          </article>
+        </div>
 
+        <div class="tags" style="margin-top: clamp(1.6rem, 3vh, 2.2rem)">
+          <a class="tag" href="https://pagetechnologies.io" target="_blank" rel="noopener">pagetechnologies.io <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </section>
 
-		<!-- Scripts -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section reveal" id="experience">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="sec-label"><span class="tick" aria-hidden="true"></span>Experience</p>
+          <h2 class="sec-title">A decade of decoding.</h2>
+        </div>
 
+        <article class="entry">
+          <div class="entry-meta"><span class="when">Sep 2025 — Present</span><span class="where">Boulder, CO</span></div>
+          <div class="entry-body">
+            <h3 class="org">Page Technologies <span class="role">Founding Software Engineer</span></h3>
+            <ul class="points">
+              <li>Building the Autosampler nutrient-monitoring platform across the whole stack — firmware, ML, and cloud (<a class="ul" href="#agtech">details above</a>).</li>
+              <li>Firmware in <strong>C</strong> on ESP32 (ESP-IDF / FreeRTOS): fluidics control, BLE provisioning, and secure MQTT-over-TLS telemetry to AWS IoT.</li>
+              <li>On-device ML that turns ion-selective-electrode signals into nutrient PPM, plus a serverless AWS backend and a Vue / TypeScript dashboard with alerts and SCADA integration.</li>
+            </ul>
+            <div class="tags">
+              <a class="tag" href="https://pagetechnologies.io" target="_blank" rel="noopener">pagetechnologies.io <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-meta"><span class="when">Jul 2025 — Sep 2025</span><span class="where">Reedsburg, WI</span></div>
+          <div class="entry-body">
+            <h3 class="org">Computer Connection Wisconsin <span class="role">Web Developer / LLM Engineer</span></h3>
+            <ul class="points">
+              <li>Built and deployed a <strong>RAG support chatbot</strong> with human-agent escalation and a ticket-based follow-up system.</li>
+              <li>Maintained and updated the company's web properties.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-meta"><span class="when">Mar 2025 — Present</span><span class="where">Independent</span></div>
+          <div class="entry-body">
+            <h3 class="org">Sermon RAG <span class="role">LLM Engineer · Side Project</span></h3>
+            <ul class="points">
+              <li>Built a Django <strong>Retrieval-Augmented Generation</strong> system answering sermon questions over a custom dataset scraped from YouTube, using Google Gemini and FAISS vector search.</li>
+              <li>Added semantic search with YouTube-timestamp linking; deployed on Heroku and AWS.</li>
+            </ul>
+            <div class="tags">
+              <a class="tag" href="https://github.com/CalebUAz/CFC-RAG" target="_blank" rel="noopener">CFC-RAG <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="tag" href="http://ai.rlcf.church" target="_blank" rel="noopener">live demo <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-meta"><span class="when">Mar 2024 — Mar 2025</span><span class="where">Seattle, WA</span></div>
+          <div class="entry-body">
+            <h3 class="org">Allen Institute <span class="role">Software Engineer II</span></h3>
+            <ul class="points">
+              <li>Applied transfer learning to generate <strong>real-time neuron masks</strong> for the SLAP2 microscope, removing manual annotation from voltage-imaging workflows.</li>
+              <li>Designed an iGluSnFR motion-correction pipeline for dendrite imaging that <strong>outperformed Suite2p, CaImAn, and Patchwarp</strong>, with an ETL framework for large datasets.</li>
+              <li>Built an iGluSnFR simulation pipeline and contributed to super-resolution source extraction for synapse identification; co-authored a forthcoming methods paper.</li>
+            </ul>
+            <div class="tags">
+              <a class="tag" href="https://github.com/calebshibu/SLAP2-Cellpose" target="_blank" rel="noopener">SLAP2-Cellpose <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="tag" href="https://github.com/AllenNeuralDynamics/iGluSnFR-registration-pipeline" target="_blank" rel="noopener">registration-pipeline <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="tag" href="https://github.com/AllenNeuralDynamics/iGluSnFR-simulation" target="_blank" rel="noopener">simulation <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="tag" href="https://github.com/AllenNeuralDynamics/iGluSnFR-ROI" target="_blank" rel="noopener">source-extraction <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-meta"><span class="when">Jan 2024 — Feb 2024</span><span class="where">Ames, IA</span></div>
+          <div class="entry-body">
+            <h3 class="org">Biotronics <span class="role">Machine Learning Engineer</span></h3>
+            <ul class="points">
+              <li>Refactored the image-preprocessing codebase and worked on <strong>explainability</strong> for a ResNet predicting intramuscular fat from livestock ultrasound.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-meta"><span class="when">Aug 2021 — Dec 2023</span><span class="where">Tucson, AZ</span></div>
+          <div class="entry-body">
+            <h3 class="org">University of Arizona <span class="role">Graduate Research Assistant</span></h3>
+            <ul class="points">
+              <li>Classified valence and arousal from fNIRS and EEG with LSTMs; first-authored a paper <strong>accepted at NeurIPS 2023</strong>.</li>
+              <li>Built networked finger-tapping and imaging tasks in PyGame, a real-time physiology visualizer in PyQt5, and data conversion/labeling tooling.</li>
+            </ul>
+            <div class="tags">
+              <a class="tag" href="https://nips.cc/virtual/2023/poster/73548" target="_blank" rel="noopener">NeurIPS poster <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="tag" href="https://github.com/ml4ai/tomcat/tree/master/human_experiments/lab_software/tomcat-baseline-tasks" target="_blank" rel="noopener">baseline-tasks <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="tag" href="https://github.com/ml4ai/tomcat/tree/master/human_experiments/lab_software/tomcat-physio-viz" target="_blank" rel="noopener">physio-viz <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-meta"><span class="when">Jan 2021 — Jul 2021</span><span class="where">Kerala, India</span></div>
+          <div class="entry-body">
+            <h3 class="org">SCTIMST <span class="role">Project Scientist</span></h3>
+            <ul class="points">
+              <li>Built a <strong>neurofeedback game</strong> with real-time fNIRS filtering and live deep-learning brain-state prediction driving the gameplay.</li>
+              <li>Developed an explainable fNIRS classifier with DeepSHAP that attributes each prediction to specific signal channels.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-meta"><span class="when">Sep 2020 — Jan 2021</span><span class="where">Memphis, TN</span></div>
+          <div class="entry-body">
+            <h3 class="org">St. Jude Children's Research Hospital <span class="role">Research Intern</span></h3>
+            <ul class="points">
+              <li>Built a deep-learning classifier separating <strong>active vs. passive brain states</strong> in single-trial lower-limb motor preparation for stroke patients — resolving knee- and hip-driven activations in closely adjacent motor cortex.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-meta"><span class="when">Jun 2019 — Sep 2020</span><span class="where">Kerala, India</span></div>
+          <div class="entry-body">
+            <h3 class="org">SCTIMST <span class="role">Research Intern</span></h3>
+            <ul class="points">
+              <li>Engineered handcrafted fNIRS features with PCA and ICA to boost SVM and KNN classification accuracy.</li>
+              <li>Built sliding-window CNN and LSTM models that lifted fNIRS classification accuracy from <strong>55% to 97%</strong>.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section class="section reveal" id="publications">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="sec-label"><span class="tick" aria-hidden="true"></span>Publications</p>
+          <h2 class="sec-title">Selected papers.</h2>
+        </div>
+
+        <article class="pub">
+          <div class="pub-year"><div class="yr">2023</div></div>
+          <div class="pub-body">
+            <h3 class="pub-title">The ToMCAT Dataset</h3>
+            <p class="pub-authors">A. Pyarelal, E. Duong, <span class="me">C. J. Shibu</span>, P. Soares, S. Boyd, P. Khosla, V. Pfeifer, D. Zhang, E. S. Andrews, R. Champlin, V. P. Raymond, M. Krishnaswamy, C. Morrison, E. Butler, K. Barnard</p>
+            <p class="pub-venue">37th Conference on Neural Information Processing Systems (NeurIPS) — Datasets &amp; Benchmarks Track, 2023</p>
+            <div class="pub-actions">
+              <a class="ul" href="https://openreview.net/forum?id=ZJWQfgXQb6" target="_blank" rel="noopener">PDF</a>
+              <details class="cite">
+                <summary>BibTeX</summary>
+                <div class="cite-body">
+                  <div class="cite-bar"><span>BibTeX</span><button class="copy-btn" type="button">Copy</button></div>
+                  <pre>@inproceedings{pyarelal2023tomcat,
+  title     = {The ToMCAT Dataset},
+  author    = {Pyarelal, Adarsh and Duong, Eric and Shibu, Caleb Jones
+               and Soares, Paulo and Boyd, Savannah and Khosla, Payal
+               and Pfeifer, Valeria and Zhang, Diheng and Andrews, Eric S.
+               and Champlin, Rick and Raymond, Vincent Paul
+               and Krishnaswamy, Meghavarshini and Morrison, Clayton
+               and Butler, Emily and Barnard, Kobus},
+  booktitle = {Thirty-seventh Conference on Neural Information Processing
+               Systems Datasets and Benchmarks Track},
+  year      = {2023},
+  url       = {https://openreview.net/forum?id=ZJWQfgXQb6}
+}</pre>
+                </div>
+              </details>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-year"><div class="yr">2023</div></div>
+          <div class="pub-body">
+            <h3 class="pub-title">Decoding Emotional Responses: A Comparative Study of fNIRS and EEG Neuroimaging Techniques</h3>
+            <p class="pub-authors"><span class="me">C. J. Shibu</span></p>
+            <p class="pub-venue">M.S. Thesis, The University of Arizona, 2023</p>
+            <div class="pub-actions">
+              <a class="ul" href="https://repository.arizona.edu/bitstream/handle/10150/670846/azu_etd_21073_sip1_m.pdf?sequence=1&amp;isAllowed=y" target="_blank" rel="noopener">PDF</a>
+              <details class="cite">
+                <summary>BibTeX</summary>
+                <div class="cite-body">
+                  <div class="cite-bar"><span>BibTeX</span><button class="copy-btn" type="button">Copy</button></div>
+                  <pre>@mastersthesis{shibu2023decoding,
+  title  = {Decoding Emotional Responses: A Comparative Study
+            of fNIRS and EEG Neuroimaging Techniques},
+  author = {Shibu, Caleb Jones},
+  school = {The University of Arizona},
+  year   = {2023},
+  url    = {https://repository.arizona.edu/handle/10150/670846}
+}</pre>
+                </div>
+              </details>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-year"><div class="yr">2022</div></div>
+          <div class="pub-body">
+            <h3 class="pub-title">Explainable Artificial Intelligence Model to Predict Brain States from fNIRS Signals</h3>
+            <p class="pub-authors"><span class="me">C. J. Shibu</span>, S. Sreedharan, K. M. Arun, C. Kesavadas, R. Sitaram</p>
+            <p class="pub-venue">Frontiers in Human Neuroscience — Brain-Computer Interfaces, 2022</p>
+            <div class="pub-actions">
+              <a class="ul" href="https://www.frontiersin.org/articles/10.3389/fnhum.2022.1029784/full" target="_blank" rel="noopener">PDF</a>
+              <details class="cite">
+                <summary>BibTeX</summary>
+                <div class="cite-body">
+                  <div class="cite-bar"><span>BibTeX</span><button class="copy-btn" type="button">Copy</button></div>
+                  <pre>@article{shibu2022explainable,
+  title   = {Explainable artificial intelligence model to predict
+             brain states from fNIRS signals},
+  author  = {Shibu, Caleb Jones and Sreedharan, Sujesh
+             and Arun, K. M. and Kesavadas, Chandrasekharan
+             and Sitaram, Ranganatha},
+  journal = {Frontiers in Human Neuroscience},
+  year    = {2022},
+  doi     = {10.3389/fnhum.2022.1029784}
+}</pre>
+                </div>
+              </details>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-year"><div class="yr">2020</div></div>
+          <div class="pub-body">
+            <h3 class="pub-title">Comparison of Classification Performance of Handpicked, Handcrafted, and Automated Features for an fNIRS-BCI System</h3>
+            <p class="pub-authors"><span class="me">C. J. Shibu</span>, S. Sreedharan, K. M. Arun, C. Kesavadas</p>
+            <p class="pub-venue">5th International Conference on Intelligent Informatics and Biomedical Sciences (ICIIBMS), IEEE, 2020, pp. 152–157</p>
+            <div class="pub-actions">
+              <a class="ul" href="https://ieeexplore.ieee.org/document/9336392" target="_blank" rel="noopener">PDF</a>
+              <details class="cite">
+                <summary>BibTeX</summary>
+                <div class="cite-body">
+                  <div class="cite-bar"><span>BibTeX</span><button class="copy-btn" type="button">Copy</button></div>
+                  <pre>@inproceedings{shibu2020comparison,
+  title     = {Comparison of classification performance of handpicked,
+               handcrafted, and automated-features for fNIRS-BCI system},
+  author    = {Shibu, Caleb Jones and Sreedharan, Sujesh
+               and Arun, K. M. and Kesavadas, Chandrasekharan},
+  booktitle = {2020 5th International Conference on Intelligent
+               Informatics and Biomedical Sciences (ICIIBMS)},
+  pages     = {152--157},
+  year      = {2020},
+  publisher = {IEEE},
+  doi       = {10.1109/ICIIBMS50712.2020.9336392}
+}</pre>
+                </div>
+              </details>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section reveal" id="contact">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="sec-label"><span class="tick" aria-hidden="true"></span>Contact</p>
+        </div>
+        <div class="contact-inner">
+          <p class="contact-lead">Building something at the edge of <span class="grad">brains and machines?</span> Let's talk.</p>
+          <div class="contact-links">
+            <a class="btn primary" href="mailto:calebshibu@gmail.com">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+              calebshibu@gmail.com
+            </a>
+            <a class="btn" href="https://github.com/calebshibu" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+              github.com/calebshibu
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/caleb-jones-shibu/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M13.63 0H2.37A2.37 2.37 0 0 0 0 2.37v11.26A2.37 2.37 0 0 0 2.37 16h11.26A2.37 2.37 0 0 0 16 13.63V2.37A2.37 2.37 0 0 0 13.63 0ZM4.94 13.06H2.86V6.4h2.08v6.66ZM3.9 5.49a1.2 1.2 0 1 1 0-2.41 1.2 1.2 0 0 1 0 2.41Zm9.16 7.57h-2.08V9.82c0-.78-.01-1.78-1.08-1.78-1.09 0-1.26.85-1.26 1.72v3.3H6.56V6.4h2v.91h.03c.28-.53.96-1.08 1.97-1.08 2.11 0 2.5 1.39 2.5 3.19v3.64Z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot-inner">
+      <span class="sig"><span class="dot" aria-hidden="true"></span>Caleb Jones Shibu</span>
+      <span id="year-line">© 2026 · Boulder, CO</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      "use strict";
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      /* ---- nav: scrolled state + active section ---- */
+      var nav = document.getElementById("nav");
+      function onScroll() {
+        if (window.scrollY > 24) nav.classList.add("scrolled");
+        else nav.classList.remove("scrolled");
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
+      var sections = navLinks
+        .map(function (a) { return document.querySelector(a.getAttribute("href")); })
+        .filter(Boolean);
+      if ("IntersectionObserver" in window && sections.length) {
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              var id = e.target.id;
+              navLinks.forEach(function (a) {
+                a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+              });
+            }
+          });
+        }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+        sections.forEach(function (s) { spy.observe(s); });
+      }
+
+      /* ---- reveal on scroll ---- */
+      var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+      if (reduce) {
+        reveals.forEach(function (el) { el.classList.add("in"); });
+      } else if ("IntersectionObserver" in window) {
+        var ro = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); }
+          });
+        }, { rootMargin: "0px 0px -12% 0px", threshold: 0.06 });
+        reveals.forEach(function (el) { ro.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add("in"); });
+      }
+
+      /* ---- copy BibTeX ---- */
+      document.querySelectorAll(".copy-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var pre = btn.closest(".cite-body").querySelector("pre");
+          var text = pre ? pre.textContent : "";
+          var done = function () {
+            var orig = "Copy";
+            btn.textContent = "Copied ✓";
+            btn.classList.add("done");
+            setTimeout(function () { btn.textContent = orig; btn.classList.remove("done"); }, 1600);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done).catch(function () { fallback(text); done(); });
+          } else { fallback(text); done(); }
+        });
+      });
+      function fallback(text) {
+        var ta = document.createElement("textarea");
+        ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+
+      /* ---- the signal: animated neural-trace hero ---- */
+      var canvas = document.getElementById("signal");
+      if (!canvas) return;
+      var ctx = canvas.getContext("2d");
+      var W = 0, H = 0, dpr = 1, grad = null;
+
+      function size() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var r = canvas.getBoundingClientRect();
+        W = Math.max(1, r.width); H = Math.max(1, r.height);
+        canvas.width = Math.round(W * dpr);
+        canvas.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        grad = ctx.createLinearGradient(0, 0, W, 0);
+        grad.addColorStop(0.0, "#7c5cff");
+        grad.addColorStop(0.5, "#ff4d8d");
+        grad.addColorStop(1.0, "#ffb15c");
+      }
+      size();
+      window.addEventListener("resize", size);
+
+      // layered traces: amplitude, phase seed, frequency mix, opacity, width
+      var traces = [
+        { amp: 0.30, seed: 0.0, opacity: 1.00, width: 2.1, glow: 16 },
+        { amp: 0.20, seed: 2.1, opacity: 0.42, width: 1.4, glow: 8 },
+        { amp: 0.14, seed: 4.6, opacity: 0.26, width: 1.2, glow: 6 }
+      ];
+
+      function wave(x, t, seed) {
+        return Math.sin(x * 0.013 + t * 1.05 + seed) * 1.0
+             + Math.sin(x * 0.027 - t * 0.72 + seed * 2.0) * 0.5
+             + Math.sin(x * 0.052 + t * 1.7 + seed * 0.5) * 0.22;
+      }
+
+      function drawTrace(tr, t, clipW) {
+        var mid = H / 2;
+        var span = H * tr.amp;
+        ctx.beginPath();
+        var step = 2;
+        for (var x = 0; x <= clipW; x += step) {
+          var y = mid + wave(x, t, tr.seed) * span * 0.5;
+          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.globalAlpha = tr.opacity;
+        ctx.lineWidth = tr.width;
+        ctx.lineJoin = "round";
+        ctx.lineCap = "round";
+        ctx.shadowColor = "rgba(255, 77, 141, 0.5)";
+        ctx.shadowBlur = tr.glow;
+        ctx.strokeStyle = grad;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
+      }
+
+      if (reduce) {
+        // static, elegant single render
+        ctx.clearRect(0, 0, W, H);
+        traces.forEach(function (tr) { drawTrace(tr, 0.6, W); });
+        return;
+      }
+
+      var start = null;
+      var running = true;
+      var INTRO = 1400; // ms left-to-right draw-on
+
+      function frame(ts) {
+        if (!running) return;
+        if (start === null) start = ts;
+        var elapsed = ts - start;
+        var t = elapsed / 1000;
+        var p = Math.min(1, elapsed / INTRO);
+        // easeOutCubic
+        var eased = 1 - Math.pow(1 - p, 3);
+        var clipW = W * eased;
+        ctx.clearRect(0, 0, W, H);
+        for (var i = 0; i < traces.length; i++) drawTrace(traces[i], t, clipW);
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+
+      // pause when tab hidden
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) { running = false; }
+        else if (!running) { running = true; requestAnimationFrame(frame); }
+      });
+
+      // pause when hero scrolled away (save CPU)
+      if ("IntersectionObserver" in window) {
+        var heroIO = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              if (!running && !document.hidden) { running = true; requestAnimationFrame(frame); }
+            } else { running = false; }
+          });
+        }, { threshold: 0 });
+        heroIO.observe(canvas);
+      }
+
+      // keep footer year current
+      var yl = document.getElementById("year-line");
+      if (yl) yl.textContent = "© " + new Date().getFullYear() + " · Boulder, CO";
+    })();
+  </script>
+</body>
 </html>
-
-
-
