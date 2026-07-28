@@ -6,14 +6,14 @@
   <title>Caleb Jones Shibu — Neuroscience · Machine Learning · Systems</title>
 
   <meta name="author" content="Caleb Jones Shibu" />
-  <meta name="description" content="Caleb Jones Shibu builds systems that turn noisy neural signals into meaning — brain–computer interfaces, explainable machine learning, and the embedded and cloud infrastructure that runs them. Founding Software Engineer at Page Technologies." />
+  <meta name="description" content="Caleb Jones Shibu builds systems that turn noisy neural signals into meaning — brain–computer interfaces, explainable machine learning, and the embedded and cloud infrastructure that runs them. Founding Engineer at PAGE Technologies." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://calebuaz.github.io/" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Caleb Jones Shibu — Neuroscience · Machine Learning · Systems" />
-  <meta property="og:description" content="Decoding neural signals into models, neurofeedback, and systems that ship. Founding Software Engineer at Page Technologies." />
+  <meta property="og:description" content="Decoding neural signals into models, neurofeedback, and systems that ship. Founding Engineer at PAGE Technologies." />
   <meta property="og:url" content="https://calebuaz.github.io/" />
   <meta property="og:image" content="https://calebuaz.github.io/assets/img/calebjshibu.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -253,6 +253,42 @@
     }
     .signal-band .axis-l { left: 0; }
     .signal-band .axis-r { right: 0; }
+    .signal-band button.axis-r {
+      bottom: 0;
+      background: none;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      padding: .25rem .55rem;
+      cursor: pointer;
+      color: var(--text-3);
+      transition: color .2s ease, border-color .2s ease, background .2s ease, text-shadow .3s ease;
+    }
+    .signal-band button.axis-r:hover {
+      color: var(--text);
+      border-color: rgba(255, 77, 141, 0.4);
+      background: rgba(255, 77, 141, 0.07);
+    }
+    .signal-band button.axis-r.decoded {
+      color: #5ee8a8;
+      border-color: rgba(94, 232, 168, 0.35);
+      text-shadow: 0 0 10px rgba(94, 232, 168, 0.4);
+    }
+    .signal-band .readout {
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .1em;
+      color: #5ee8a8;
+      text-shadow: 0 0 14px rgba(94, 232, 168, 0.35);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity .4s ease;
+      pointer-events: none;
+    }
+    .signal-band .readout.on { opacity: 1; }
 
     .hero-actions {
       display: flex;
@@ -731,7 +767,7 @@
         <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="nav-cta" href="https://calebuaz.github.io/assets/documents/Caleb_Resume_2025.pdf" target="_blank" rel="noopener">
+      <a class="nav-cta" href="https://calebuaz.github.io/assets/documents/Caleb_Shibu_Resume_2026.pdf" target="_blank" rel="noopener">
         Résumé
         <svg class="ext" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
       </a>
@@ -746,19 +782,20 @@
         <h1 class="name">Caleb Jones <span class="last">Shibu</span></h1>
         <p class="thesis">I build systems that turn noisy signals into meaning — from <em>brain–computer interfaces</em> to <em>in-field nutrient sensors</em>, and the ML, firmware, and cloud that run them.</p>
 
-        <div class="signal-band" aria-hidden="true">
-          <div class="baseline"></div>
-          <canvas id="signal"></canvas>
-          <span class="axis-l">fNIRS · EEG · imaging</span>
-          <span class="axis-r">decode →</span>
+        <div class="signal-band">
+          <div class="baseline" aria-hidden="true"></div>
+          <canvas id="signal" aria-hidden="true"></canvas>
+          <span class="readout" id="readout" aria-live="polite"></span>
+          <span class="axis-l" aria-hidden="true">fNIRS · EEG · imaging</span>
+          <button class="axis-r" id="decode-btn" type="button" aria-pressed="false" title="Run the decoder on the signal">decode →</button>
         </div>
 
         <div class="hero-actions">
-          <span class="now"><span class="pulse" aria-hidden="true"></span>Now — <b>Founding Software Engineer, Page Technologies · Boulder, CO</b></span>
+          <span class="now"><span class="pulse" aria-hidden="true"></span>Now — <b>Founding Engineer, PAGE Technologies · Boulder, CO</b></span>
         </div>
 
         <div class="hero-actions" style="margin-top:1.4rem">
-          <a class="btn primary" href="https://calebuaz.github.io/assets/documents/Caleb_Resume_2025.pdf" target="_blank" rel="noopener">
+          <a class="btn primary" href="https://calebuaz.github.io/assets/documents/Caleb_Shibu_Resume_2026.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
             Download résumé
           </a>
@@ -792,7 +829,7 @@
           </div>
           <div class="about-text">
             <p>Caleb works at the seam of <strong>neuroscience, machine learning, and software engineering</strong>. For most of a decade he's been decoding brain activity — fNIRS, EEG, and voltage imaging — and building the real-time systems, pipelines, and models that turn those signals into something usable.</p>
-            <p>His research runs from brain–computer interfaces and neurofeedback to explainable AI; his engineering runs from embedded firmware to ETL at scale to AI products in production. He's as interested in <strong>why</strong> a model makes a prediction as <strong>whether</strong> it's right. Today that means building Page Technologies' field nutrient sensors — the same decode-the-signal problem, now in soil and water instead of cortex.</p>
+            <p>His research runs from brain–computer interfaces and neurofeedback to explainable AI; his engineering runs from embedded firmware to ETL at scale to AI products in production. He's as interested in <strong>why</strong> a model makes a prediction as <strong>whether</strong> it's right. Today that means building PAGE Technologies' field nutrient sensors — the same decode-the-signal problem, now in soil and water instead of cortex.</p>
           </div>
         </div>
 
@@ -829,11 +866,11 @@
     <section class="section reveal" id="agtech">
       <div class="wrap">
         <div class="sec-head">
-          <p class="sec-label"><span class="tick" aria-hidden="true"></span>AgTech · Page Technologies</p>
+          <p class="sec-label"><span class="tick" aria-hidden="true"></span>AgTech · PAGE Technologies</p>
           <h2 class="sec-title">From electrode to dashboard.</h2>
         </div>
 
-        <p class="section-lead">At <strong>Page Technologies</strong>, Caleb builds the Autosampler — a field instrument that automatically samples, measures, and uploads nutrient levels (nitrate, potassium, calcium, ammonium) from greenhouses, soil, and water systems. It's the same problem as the rest of his work in a new medium: <em>take a noisy analog signal and turn it into something you can act on</em>. He owns it end to end — the firmware on the device, the models that read the chemistry, and the platform growers log into.</p>
+        <p class="section-lead">At <strong>PAGE Technologies</strong>, Caleb builds the Autosampler — a field instrument that automatically samples, measures, and uploads nutrient levels (nitrate, potassium, calcium, ammonium) from greenhouses, soil, and water systems. It's the same problem as the rest of his work in a new medium: <em>take a noisy analog signal and turn it into something you can act on</em>. He owns it end to end — the firmware on the device, the models that read the chemistry, and the platform growers log into.</p>
 
         <!-- the pipeline: raw electrode signal → ppm → cloud -->
         <div class="pipe" aria-hidden="true">
@@ -889,6 +926,8 @@
 
         <div class="tags" style="margin-top: clamp(1.6rem, 3vh, 2.2rem)">
           <a class="tag" href="https://pagetechnologies.io" target="_blank" rel="noopener">pagetechnologies.io <svg class="ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <span class="tag">EPA SBIR Phase II — $400k</span>
+          <span class="tag">U.S. patent pending (filed Dec 2025)</span>
         </div>
       </div>
     </section>
@@ -902,11 +941,12 @@
         </div>
 
         <article class="entry">
-          <div class="entry-meta"><span class="when">Sep 2025 — Present</span><span class="where">Boulder, CO</span></div>
+          <div class="entry-meta"><span class="when">Aug 2025 — Present</span><span class="where">Boulder, CO</span></div>
           <div class="entry-body">
-            <h3 class="org">Page Technologies <span class="role">Founding Software Engineer</span></h3>
+            <h3 class="org">PAGE Technologies <span class="role">Founding Engineer · ML &amp; Signal Processing</span></h3>
             <ul class="points">
               <li>Building the Autosampler nutrient-monitoring platform across the whole stack — firmware, ML, and cloud (<a class="ul" href="#agtech">details above</a>).</li>
+              <li>Designed the ML calibration and sensor-fusion pipeline behind the platform's <strong>$400,000 EPA SBIR Phase II award</strong>; named co-inventor on the company's U.S. patent application (filed Dec 2025).</li>
               <li>Firmware in <strong>C</strong> on ESP32 (ESP-IDF / FreeRTOS): fluidics control, BLE provisioning, and secure MQTT-over-TLS telemetry to AWS IoT.</li>
               <li>On-device ML that turns ion-selective-electrode signals into nutrient PPM, plus a serverless AWS backend and a Vue / TypeScript dashboard with alerts and SCADA integration.</li>
             </ul>
@@ -1175,7 +1215,7 @@
   <footer>
     <div class="wrap foot-inner">
       <span class="sig"><span class="dot" aria-hidden="true"></span>Caleb Jones Shibu</span>
-      <span id="year-line">© 2026 · Boulder, CO</span>
+      <span id="year-line">© 2026 · Denver, CO</span>
     </div>
   </footer>
 
@@ -1273,42 +1313,114 @@
 
       // layered traces: amplitude, phase seed, frequency mix, opacity, width
       var traces = [
-        { amp: 0.30, seed: 0.0, opacity: 1.00, width: 2.1, glow: 16 },
+        { amp: 0.30, seed: 0.0, opacity: 1.00, width: 2.1, glow: 16, core: true },
         { amp: 0.20, seed: 2.1, opacity: 0.42, width: 1.4, glow: 8 },
         { amp: 0.14, seed: 4.6, opacity: 0.26, width: 1.2, glow: 6 }
       ];
 
-      function wave(x, t, seed) {
-        return Math.sin(x * 0.013 + t * 1.05 + seed) * 1.0
-             + Math.sin(x * 0.027 - t * 0.72 + seed * 2.0) * 0.5
-             + Math.sin(x * 0.052 + t * 1.7 + seed * 0.5) * 0.22;
+      // decode state: 0 = raw signal, 1 = decoded (noise stripped, clean green trace)
+      var decodeTarget = 0, decodeP = 0;
+
+      function wave(x, t, seed, d) {
+        var clean = Math.sin(x * 0.013 + t * 1.05 + seed);
+        var noise = Math.sin(x * 0.027 - t * 0.72 + seed * 2.0) * 0.5
+                  + Math.sin(x * 0.052 + t * 1.7 + seed * 0.5) * 0.22;
+        return clean + noise * (1 - d);
       }
 
-      function drawTrace(tr, t, clipW) {
+      function drawTrace(tr, t, clipW, d) {
+        var fade = tr.core ? 1 : 1 - d; // side traces vanish once decoded
+        if (fade <= 0.02) return;
         var mid = H / 2;
         var span = H * tr.amp;
         ctx.beginPath();
         var step = 2;
         for (var x = 0; x <= clipW; x += step) {
-          var y = mid + wave(x, t, tr.seed) * span * 0.5;
+          var y = mid + wave(x, t, tr.seed, d) * span * 0.5;
           if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
         }
-        ctx.globalAlpha = tr.opacity;
         ctx.lineWidth = tr.width;
         ctx.lineJoin = "round";
         ctx.lineCap = "round";
-        ctx.shadowColor = "rgba(255, 77, 141, 0.5)";
         ctx.shadowBlur = tr.glow;
-        ctx.strokeStyle = grad;
-        ctx.stroke();
+        var rawA = tr.opacity * fade * (1 - d);
+        var decA = tr.opacity * fade * d;
+        if (rawA > 0.02) {
+          ctx.globalAlpha = rawA;
+          ctx.shadowColor = "rgba(255, 77, 141, 0.5)";
+          ctx.strokeStyle = grad;
+          ctx.stroke();
+        }
+        if (decA > 0.02) {
+          ctx.globalAlpha = decA;
+          ctx.shadowColor = "rgba(94, 232, 168, 0.5)";
+          ctx.strokeStyle = "#5ee8a8";
+          ctx.stroke();
+        }
         ctx.shadowBlur = 0;
         ctx.globalAlpha = 1;
       }
 
+      function render(t, clipW) {
+        ctx.clearRect(0, 0, W, H);
+        for (var i = 0; i < traces.length; i++) drawTrace(traces[i], t, clipW, decodeP);
+      }
+
+      /* ---- decode button: run the "classifier" on the trace ---- */
+      var decodeBtn = document.getElementById("decode-btn");
+      var readout = document.getElementById("readout");
+      var readings = [
+        "state: flow · p=0.97",
+        "state: motor imagery · p=0.94",
+        "NO₃⁻ 142 ppm · in range",
+        "state: rest · p=0.91"
+      ];
+      var typeTimer = null, cycleTimer = null;
+
+      function typeOut(text) {
+        clearInterval(typeTimer);
+        readout.classList.add("on");
+        if (reduce) { readout.textContent = text; return; }
+        var i = 0;
+        readout.textContent = "";
+        typeTimer = setInterval(function () {
+          i++;
+          readout.textContent = text.slice(0, i) + (i < text.length ? "▌" : "");
+          if (i >= text.length) clearInterval(typeTimer);
+        }, 26);
+      }
+
+      function setDecoded(on) {
+        decodeTarget = on ? 1 : 0;
+        decodeBtn.setAttribute("aria-pressed", String(on));
+        decodeBtn.classList.toggle("decoded", on);
+        decodeBtn.textContent = on ? "◈ decoded · reset" : "decode →";
+        clearInterval(cycleTimer);
+        if (on) {
+          var idx = 0;
+          typeOut(readings[idx]);
+          cycleTimer = setInterval(function () {
+            idx = (idx + 1) % readings.length;
+            typeOut(readings[idx]);
+          }, 3200);
+        } else {
+          clearInterval(typeTimer);
+          readout.classList.remove("on");
+        }
+        if (reduce) { decodeP = decodeTarget; render(0.6, W); }
+      }
+
+      if (decodeBtn && readout) {
+        decodeBtn.addEventListener("click", function () { setDecoded(decodeTarget !== 1); });
+      }
+
+      // keep footer year current
+      var yl = document.getElementById("year-line");
+      if (yl) yl.textContent = "© " + new Date().getFullYear() + " · Denver, CO";
+
       if (reduce) {
         // static, elegant single render
-        ctx.clearRect(0, 0, W, H);
-        traces.forEach(function (tr) { drawTrace(tr, 0.6, W); });
+        render(0.6, W);
         return;
       }
 
@@ -1324,9 +1436,9 @@
         var p = Math.min(1, elapsed / INTRO);
         // easeOutCubic
         var eased = 1 - Math.pow(1 - p, 3);
-        var clipW = W * eased;
-        ctx.clearRect(0, 0, W, H);
-        for (var i = 0; i < traces.length; i++) drawTrace(traces[i], t, clipW);
+        decodeP += (decodeTarget - decodeP) * 0.055;
+        if (Math.abs(decodeTarget - decodeP) < 0.001) decodeP = decodeTarget;
+        render(t, W * eased);
         requestAnimationFrame(frame);
       }
       requestAnimationFrame(frame);
@@ -1348,10 +1460,6 @@
         }, { threshold: 0 });
         heroIO.observe(canvas);
       }
-
-      // keep footer year current
-      var yl = document.getElementById("year-line");
-      if (yl) yl.textContent = "© " + new Date().getFullYear() + " · Boulder, CO";
     })();
   </script>
 </body>
