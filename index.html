@@ -6,7 +6,7 @@
   <title>Caleb Jones Shibu — Neuroscience · Machine Learning · Systems</title>
 
   <meta name="author" content="Caleb Jones Shibu" />
-  <meta name="description" content="Caleb Jones Shibu builds systems that turn noisy signals into meaning — brain–computer interfaces, explainable machine learning, and field nutrient sensing. Founding Engineer at PAGE Technologies; technical lead behind a $400,000 EPA SBIR Phase II award and co-inventor on a U.S. patent application; NeurIPS co-author and Sigma Xi Full Member." />
+  <meta name="description" content="Caleb Jones Shibu builds systems that turn noisy signals into meaning — brain–computer interfaces, explainable machine learning, and field nutrient sensing. Founding Engineer at PAGE Technologies; technical lead behind a $400,000 EPA SBIR Phase II award and co-inventor on a U.S. patent application; NeurIPS co-author, IEEE Senior Member, and Sigma Xi Full Member." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://calebuaz.github.io/" />
 
@@ -703,12 +703,16 @@
       max-width: 22ch;
       margin: 0;
     }
+    @keyframes gradPan { from { background-position: 0% center; } to { background-position: -200% center; } }
     .contact-lead .grad {
-      background: var(--grad);
+      /* mirrored so the 200% pan loops seamlessly */
+      background: linear-gradient(90deg, var(--g1), var(--g2) 25%, var(--g3) 50%, var(--g2) 75%, var(--g1) 100%);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
       font-style: italic;
+      animation: gradPan 8s linear infinite;
     }
     .contact-links { display: flex; flex-wrap: wrap; gap: .8rem; }
 
@@ -728,6 +732,41 @@
     /* ---------- reveal ---------- */
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
     .reveal.in { opacity: 1; transform: none; }
+
+    /* ---------- staggered children ---------- */
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .reveal .focus, .reveal .pillar, .reveal .stage { opacity: 0; }
+    .reveal.in .focus { animation: fadeIn .55s ease both; }
+    .reveal.in .pillar, .reveal.in .stage { animation: riseIn .6s cubic-bezier(.2,.7,.2,1) both; }
+    .reveal.in .focus:nth-child(2), .reveal.in .pillar:nth-child(2), .reveal.in .stage:nth-child(2) { animation-delay: .08s; }
+    .reveal.in .focus:nth-child(3), .reveal.in .pillar:nth-child(3), .reveal.in .stage:nth-child(3) { animation-delay: .16s; }
+    .reveal.in .focus:nth-child(4), .reveal.in .stage:nth-child(4) { animation-delay: .24s; }
+    .reveal.in .focus:nth-child(5), .reveal.in .stage:nth-child(5) { animation-delay: .32s; }
+    .reveal.in .focus:nth-child(6) { animation-delay: .40s; }
+    .reveal.in .focus:nth-child(7) { animation-delay: .48s; }
+    .reveal.in .focus:nth-child(8) { animation-delay: .56s; }
+    .reveal.in .focus:nth-child(9) { animation-delay: .64s; }
+
+    .entry, .pub { opacity: 0; }
+    .entry.in, .pub.in { animation: riseIn .6s cubic-bezier(.2,.7,.2,1) both; }
+
+    /* ---------- pipeline data-flow pulse ---------- */
+    @keyframes nodePulse {
+      0%, 100% { box-shadow: 0 0 0 5px var(--bg), 0 0 10px rgba(255, 77, 141, 0.3); }
+      50%      { box-shadow: 0 0 0 5px var(--bg), 0 0 22px rgba(255, 77, 141, 0.9); }
+    }
+    .stage .node { animation: nodePulse 2.8s ease-in-out infinite; }
+    .pipe-track .stage:nth-child(2) .node { animation-delay: .35s; }
+    .pipe-track .stage:nth-child(3) .node { animation-delay: .7s; }
+    .pipe-track .stage:nth-child(4) .node { animation-delay: 1.05s; }
+    .pipe-track .stage:nth-child(5) .node { animation-delay: 1.4s; }
 
     /* ---------- responsive ---------- */
     @media (max-width: 760px) {
@@ -749,8 +788,9 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
-      .reveal { opacity: 1; transform: none; }
+      *, *::before, *::after { animation-duration: .001ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+      .reveal, .entry, .pub, .reveal .focus, .reveal .pillar, .reveal .stage { opacity: 1; transform: none; animation: none; }
+      .stage .node, .contact-lead .grad { animation: none; }
     }
   </style>
 </head>
@@ -951,6 +991,10 @@
             <p><strong>Named co-inventor</strong> — "Field-Deployable Automated Sampling, Conditioning and Measurement System for Environmental Monitoring."</p>
           </div>
           <div class="focus">
+            <p class="k"><span class="b" aria-hidden="true"></span>IEEE · 2026</p>
+            <p><strong>Senior Member, IEEE</strong> — an elevated grade held by fewer than 10% of IEEE members, recognizing significant performance in the profession.</p>
+          </div>
+          <div class="focus">
             <p class="k"><span class="b" aria-hidden="true"></span>Honor Society · 2026</p>
             <p><strong>Full Member, Sigma Xi</strong> — The Scientific Research Honor Society, elected on the basis of published research.</p>
           </div>
@@ -965,6 +1009,14 @@
           <div class="focus">
             <p class="k"><span class="b" aria-hidden="true"></span>Selection · 2024</p>
             <p><strong>1 of ~300 applicants</strong> chosen for the single Software Engineer II opening at the Allen Institute for Neural Dynamics.</p>
+          </div>
+          <div class="focus">
+            <p class="k"><span class="b" aria-hidden="true"></span>Top-Tier Venue · 2023</p>
+            <p><strong>Co-author, NeurIPS 2023</strong> — "The ToMCAT Dataset," Datasets &amp; Benchmarks Track.</p>
+          </div>
+          <div class="focus">
+            <p class="k"><span class="b" aria-hidden="true"></span>Scholarship · 2021</p>
+            <p><strong>Full academic scholarship</strong> — M.S. in Computer Science, University of Arizona.</p>
           </div>
         </div>
       </div>
@@ -1290,7 +1342,7 @@
       }
 
       /* ---- reveal on scroll ---- */
-      var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+      var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal, .entry, .pub"));
       if (reduce) {
         reveals.forEach(function (el) { el.classList.add("in"); });
       } else if ("IntersectionObserver" in window) {
